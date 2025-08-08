@@ -1,1 +1,24 @@
 @import "tailwindcss";
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 10px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f3e8ff; /* light purple background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a855f7; /* main purple */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9333ea; /* darker purple on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 #f3e8ff; /* thumb color | track color */
+}

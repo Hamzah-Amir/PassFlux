@@ -48,10 +48,21 @@ const Manager = () => {
     }
 
     const savePassword = () => {
-        setPasswordArray([...passwordArray, { ...form, id: uuidv4() }])
-        localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
-        console.log([...passwordArray, form])
-
+        if (form.site.length > 3 && form.username.length > 3 && form.password.length > 3){
+            setPasswordArray([...passwordArray, { ...form, id: uuidv4() }])
+            localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
+            console.log([...passwordArray, form])
+            toast('Password Saved Successfully', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+        });
+        } 
     }
 
     const deletePassword = (id) => {
@@ -61,6 +72,16 @@ const Manager = () => {
             let newPassword = passwordArray.filter(item => { return (item.id !== id) })
             setPasswordArray(newPassword)
             localStorage.setItem("passwords", JSON.stringify(newPassword))
+            toast('Password Deleted Successfully', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+        });
         }
     }
 
