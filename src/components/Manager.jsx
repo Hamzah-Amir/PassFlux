@@ -174,7 +174,7 @@ const Manager = () => {
                                         <button onClick={() => copyText(item.password)}><img src="/copy.png" className='mr-2 cursor-pointer' width={18} alt="" /></button>
                                     </td>
 
-                                    <td className='text-center'>
+                                    <td className='text-center border border-white'>
                                         <div className='gap-1 flex items-center justify-center'>
                                             <span onClick={() => { editPassword(item.id) }}><img className='cursor-pointer' src="/edit.png" width={20} alt="edit icon" />
                                             </span>
